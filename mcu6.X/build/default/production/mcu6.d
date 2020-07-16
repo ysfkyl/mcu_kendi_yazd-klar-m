@@ -1,0 +1,1 @@
+ build/default/production/mcu6.d  build/default/production/mcu6.p1:  mcu6.c

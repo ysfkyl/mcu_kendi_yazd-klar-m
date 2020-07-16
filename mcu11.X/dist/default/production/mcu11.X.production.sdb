@@ -1,0 +1,45 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.45\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"13 C:\Users\ysfet\OneDrive\Masaüstü\mcu\mcu11.X\mcu11.c
+[v _KESME KESME `II(v  1 e 1 0 ]
+"24
+[v _main main `(v  1 e 1 0 ]
+"57 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic16f877a.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"164
+[v _PORTA PORTA `VEuc  1 e 1 @5 ]
+"1253
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"1373
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"2501
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2571
+[v _RB0 RB0 `VEb  1 e 0 @48 ]
+"2687
+[v _T0IE T0IE `VEb  1 e 0 @93 ]
+"2689
+[v _T0IF T0IF `VEb  1 e 0 @90 ]
+"12 C:\Users\ysfet\OneDrive\Masaüstü\mcu\mcu11.X\mcu11.c
+[v _sayac sayac `i  1 e 2 0 ]
+"24
+[v _main main `(v  1 e 1 0 ]
+{
+"33
+} 0
+"13
+[v _KESME KESME `II(v  1 e 1 0 ]
+{
+"23
+} 0

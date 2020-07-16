@@ -1,0 +1,486 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.45 build -152302408 
+                                                                                               Sun Mar 08 08:35:08 2020
+
+Microchip Technology Omniscient Code Generator v1.45 (Free mode) build 201711160504
+     1                           	processor	16F877A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataBANK0,global,class=CODE,delta=2
+     5                           	psect	nvCOMMON,global,class=COMMON,space=1,delta=1
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+     9                           	psect	inittext,global,class=CODE,delta=2
+    10                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    11                           	psect	maintext,global,class=CODE,split=1,delta=2
+    12                           	dabs	1,0x7E,2
+    13  0000                     
+    14                           ; Version 1.45
+    15                           ; Generated 16/11/2017 GMT
+    16                           ; 
+    17                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    18                           ; All rights reserved.
+    19                           ; 
+    20                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    21                           ; 
+    22                           ; Redistribution and use in source and binary forms, with or without modification, are
+    23                           ; permitted provided that the following conditions are met:
+    24                           ; 
+    25                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    26                           ;        conditions and the following disclaimer.
+    27                           ; 
+    28                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    29                           ;        of conditions and the following disclaimer in the documentation and/or other
+    30                           ;        materials provided with the distribution.
+    31                           ; 
+    32                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    33                           ;        software without specific prior written permission.
+    34                           ; 
+    35                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    36                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    37                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    38                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    39                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    40                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    41                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    42                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    43                           ; 
+    44                           ; 
+    45                           ; Code-generator required, PIC16F877A Definitions
+    46                           ; 
+    47                           ; SFR Addresses
+    48  0000                     	;# 
+    49  0001                     	;# 
+    50  0002                     	;# 
+    51  0003                     	;# 
+    52  0004                     	;# 
+    53  0005                     	;# 
+    54  0006                     	;# 
+    55  0007                     	;# 
+    56  0008                     	;# 
+    57  0009                     	;# 
+    58  000A                     	;# 
+    59  000B                     	;# 
+    60  000C                     	;# 
+    61  000D                     	;# 
+    62  000E                     	;# 
+    63  000E                     	;# 
+    64  000F                     	;# 
+    65  0010                     	;# 
+    66  0011                     	;# 
+    67  0012                     	;# 
+    68  0013                     	;# 
+    69  0014                     	;# 
+    70  0015                     	;# 
+    71  0015                     	;# 
+    72  0016                     	;# 
+    73  0017                     	;# 
+    74  0018                     	;# 
+    75  0019                     	;# 
+    76  001A                     	;# 
+    77  001B                     	;# 
+    78  001B                     	;# 
+    79  001C                     	;# 
+    80  001D                     	;# 
+    81  001E                     	;# 
+    82  001F                     	;# 
+    83  0081                     	;# 
+    84  0085                     	;# 
+    85  0086                     	;# 
+    86  0087                     	;# 
+    87  0088                     	;# 
+    88  0089                     	;# 
+    89  008C                     	;# 
+    90  008D                     	;# 
+    91  008E                     	;# 
+    92  0091                     	;# 
+    93  0092                     	;# 
+    94  0093                     	;# 
+    95  0094                     	;# 
+    96  0098                     	;# 
+    97  0099                     	;# 
+    98  009C                     	;# 
+    99  009D                     	;# 
+   100  009E                     	;# 
+   101  009F                     	;# 
+   102  010C                     	;# 
+   103  010D                     	;# 
+   104  010E                     	;# 
+   105  010F                     	;# 
+   106  018C                     	;# 
+   107  018D                     	;# 
+   108                           
+   109                           	psect	idataBANK0
+   110  078A                     __pidataBANK0:	
+   111                           
+   112                           ;initializer for _sutun
+   113  078A  3401               	retlw	1
+   114  078B  3400               	retlw	0
+   115  078C  3402               	retlw	2
+   116  078D  3400               	retlw	0
+   117  078E  3404               	retlw	4
+   118  078F  3400               	retlw	0
+   119  0790  3408               	retlw	8
+   120  0791  3400               	retlw	0
+   121  0792  3410               	retlw	16
+   122  0793  3400               	retlw	0
+   123                           
+   124                           ;initializer for _satir
+   125  0794  3403               	retlw	3
+   126  0795  3400               	retlw	0
+   127  0796  343A               	retlw	58
+   128  0797  3400               	retlw	0
+   129  0798  343B               	retlw	59
+   130  0799  3400               	retlw	0
+   131  079A  343A               	retlw	58
+   132  079B  3400               	retlw	0
+   133  079C  3403               	retlw	3
+   134  079D  3400               	retlw	0
+   135                           
+   136                           	psect	nvCOMMON
+   137  0070                     __pnvCOMMON:	
+   138  0070                     _tekrar:	
+   139  0070                     	ds	2
+   140  0006                     _PORTB	set	6
+   141  0007                     _PORTC	set	7
+   142  0087                     _TRISC	set	135
+   143  0086                     _TRISB	set	134
+   144                           
+   145                           ; #config settings
+   146  0000                     
+   147                           	psect	cinit
+   148  07EE                     start_initialization:	
+   149  07EE                     __initialization:	
+   150                           
+   151                           ; Initialize objects allocated to BANK0
+   152  07EE  1383               	bcf	3,7	;select IRP bank0
+   153  07EF  3034               	movlw	low (__pdataBANK0+20)
+   154  07F0  00FD               	movwf	btemp+-1
+   155  07F1  3007               	movlw	high __pidataBANK0
+   156  07F2  00FE               	movwf	btemp
+   157  07F3  308A               	movlw	low __pidataBANK0
+   158  07F4  00FF               	movwf	btemp+1
+   159  07F5  3020               	movlw	low __pdataBANK0
+   160  07F6  0084               	movwf	4
+   161  07F7  120A  118A  277D   	fcall	init_ram0
+   162                           
+   163                           ; Clear objects allocated to COMMON
+   164  07FA  01F2               	clrf	__pbssCOMMON& (0+127)
+   165  07FB  01F3               	clrf	(__pbssCOMMON+1)& (0+127)
+   166  07FC                     end_of_initialization:	
+   167                           ;End of C runtime variable initialization code
+   168                           
+   169  07FC                     __end_of__initialization:	
+   170  07FC  0183               	clrf	3
+   171  07FD  120A  118A  2F9E   	ljmp	_main	;jump to C main() function
+   172                           
+   173                           	psect	bssCOMMON
+   174  0072                     __pbssCOMMON:	
+   175  0072                     _i:	
+   176  0072                     	ds	2
+   177                           
+   178                           	psect	dataBANK0
+   179  0020                     __pdataBANK0:	
+   180  0020                     _sutun:	
+   181  0020                     	ds	10
+   182  002A                     _satir:	
+   183  002A                     	ds	10
+   184                           
+   185                           	psect	inittext
+   186  0779                     init_fetch0:	
+   187                           ;	Called with low address in FSR and high address in W
+   188                           
+   189  0779  087E               	movf	126,w
+   190  077A  008A               	movwf	10
+   191  077B  087F               	movf	127,w
+   192  077C  0082               	movwf	2
+   193  077D                     init_ram0:	
+   194                           ;Called with:
+   195                           ;	high address of idata address in btemp 
+   196                           ;	low address of idata address in btemp+1 
+   197                           ;	low address of data in FSR
+   198                           ;	high address + 1 of data in btemp-1
+   199                           
+   200  077D  2779  120A  118A   	fcall	init_fetch0
+   201  0780  0080               	movwf	0
+   202  0781  0A84               	incf	4,f
+   203  0782  0804               	movf	4,w
+   204  0783  067D               	xorwf	125,w
+   205  0784  1903               	btfsc	3,2
+   206  0785  3400               	retlw	0
+   207  0786  0AFF               	incf	127,f
+   208  0787  1903               	btfsc	3,2
+   209  0788  0AFE               	incf	126,f
+   210  0789  2F7D               	goto	init_ram0
+   211                           
+   212                           	psect	cstackCOMMON
+   213  0074                     __pcstackCOMMON:	
+   214  0074                     ?_main:	
+   215  0074                     ??_main:	
+   216                           ; 1 bytes @ 0x0
+   217                           
+   218                           
+   219                           ; 1 bytes @ 0x0
+   220  0074                     	ds	2
+   221                           
+   222                           	psect	maintext
+   223  079E                     __pmaintext:	
+   224 ;;
+   225 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   226 ;;
+   227 ;; *************** function _main *****************
+   228 ;; Defined at:
+   229 ;;		line 15 in file "mcu8.c"
+   230 ;; Parameters:    Size  Location     Type
+   231 ;;		None
+   232 ;; Auto vars:     Size  Location     Type
+   233 ;;		None
+   234 ;; Return value:  Size  Location     Type
+   235 ;;                  1    wreg      void 
+   236 ;; Registers used:
+   237 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+1
+   238 ;; Tracked objects:
+   239 ;;		On entry : B00/0
+   240 ;;		On exit  : 0/0
+   241 ;;		Unchanged: 0/0
+   242 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   243 ;;      Params:         0       0       0       0       0
+   244 ;;      Locals:         0       0       0       0       0
+   245 ;;      Temps:          2       0       0       0       0
+   246 ;;      Totals:         2       0       0       0       0
+   247 ;;Total ram usage:        2 bytes
+   248 ;; This function calls:
+   249 ;;		Nothing
+   250 ;; This function is called by:
+   251 ;;		Startup code after reset
+   252 ;; This function uses a non-reentrant model
+   253 ;;
+   254                           
+   255                           
+   256                           ;psect for function _main
+   257  079E                     _main:	
+   258                           
+   259                           ;mcu8.c: 17: TRISB = 0x00;
+   260                           
+   261                           ;incstack = 0
+   262                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1]
+   263  079E  1683               	bsf	3,5	;RP0=1, select bank1
+   264  079F  1303               	bcf	3,6	;RP1=0, select bank1
+   265  07A0  0186               	clrf	6	;volatile
+   266                           
+   267                           ;mcu8.c: 18: TRISC = 0x00;
+   268  07A1  0187               	clrf	7	;volatile
+   269  07A2                     l23:	
+   270                           ;mcu8.c: 20: while (1) {
+   271                           
+   272                           
+   273                           ;mcu8.c: 21: for(tekrar=0;tekrar<10;tekrar++){
+   274  07A2  01F0               	clrf	_tekrar
+   275  07A3  01F1               	clrf	_tekrar+1
+   276  07A4                     L1:	
+   277  07A4  0871               	movf	_tekrar+1,w
+   278  07A5  3A80               	xorlw	128
+   279  07A6  00FF               	movwf	127
+   280  07A7  3080               	movlw	128
+   281  07A8  027F               	subwf	127,w
+   282  07A9  1D03               	skipz
+   283  07AA  2FAD               	goto	u55
+   284  07AB  300A               	movlw	10
+   285  07AC  0270               	subwf	_tekrar,w
+   286  07AD                     u55:	
+   287  07AD  1803               	btfsc	3,0
+   288  07AE  2FA2               	goto	l23
+   289                           
+   290                           ;mcu8.c: 22: for(i=0;i<5;i++){
+   291  07AF  01F2               	clrf	_i
+   292  07B0  01F3               	clrf	_i+1
+   293  07B1  0873               	movf	_i+1,w
+   294  07B2  3A80               	xorlw	128
+   295  07B3  00FF               	movwf	127
+   296  07B4  3080               	movlw	128
+   297  07B5  027F               	subwf	127,w
+   298  07B6  1D03               	skipz
+   299  07B7  2FBA               	goto	u65
+   300  07B8  3005               	movlw	5
+   301  07B9  0272               	subwf	_i,w
+   302  07BA                     u65:	
+   303  07BA  1803               	btfsc	3,0
+   304  07BB  2FE7               	goto	l534
+   305  07BC                     l526:	
+   306                           
+   307                           ;mcu8.c: 23: PORTC=sutun[i];
+   308  07BC  0872               	movf	_i,w
+   309  07BD  00F4               	movwf	??_main
+   310  07BE  0774               	addwf	??_main,w
+   311  07BF  3E20               	addlw	(low (_sutun| 0))& (0+255)
+   312  07C0  0084               	movwf	4
+   313  07C1  1383               	bcf	3,7	;select IRP bank0
+   314  07C2  0800               	movf	0,w
+   315  07C3  1283               	bcf	3,5	;RP0=0, select bank0
+   316  07C4  1303               	bcf	3,6	;RP1=0, select bank0
+   317  07C5  0087               	movwf	7	;volatile
+   318                           
+   319                           ;mcu8.c: 24: PORTB = satir[i];
+   320  07C6  0872               	movf	_i,w
+   321  07C7  00F4               	movwf	??_main
+   322  07C8  0774               	addwf	??_main,w
+   323  07C9  3E2A               	addlw	(low (_satir| 0))& (0+255)
+   324  07CA  0084               	movwf	4
+   325  07CB  0800               	movf	0,w
+   326  07CC  0086               	movwf	6	;volatile
+   327                           
+   328                           ;mcu8.c: 25: _delay((unsigned long)((10)*(4000000/4000.0)));
+   329  07CD  300D               	movlw	13
+   330  07CE  00F5               	movwf	??_main+1
+   331  07CF  30FB               	movlw	251
+   332  07D0  00F4               	movwf	??_main
+   333  07D1                     u97:	
+   334  07D1  0BF4               	decfsz	??_main,f
+   335  07D2  2FD1               	goto	u97
+   336  07D3  0BF5               	decfsz	??_main+1,f
+   337  07D4  2FD1               	goto	u97
+   338  07D5  2FD6               	nop2
+   339  07D6  3001               	movlw	1
+   340  07D7  07F2               	addwf	_i,f
+   341  07D8  1803               	skipnc
+   342  07D9  0AF3               	incf	_i+1,f
+   343  07DA  3000               	movlw	0
+   344  07DB  07F3               	addwf	_i+1,f
+   345  07DC  0873               	movf	_i+1,w
+   346  07DD  3A80               	xorlw	128
+   347  07DE  00FF               	movwf	127
+   348  07DF  3080               	movlw	128
+   349  07E0  027F               	subwf	127,w
+   350  07E1  1D03               	skipz
+   351  07E2  2FE5               	goto	u75
+   352  07E3  3005               	movlw	5
+   353  07E4  0272               	subwf	_i,w
+   354  07E5                     u75:	
+   355  07E5  1C03               	skipc
+   356  07E6  2FBC               	goto	l526
+   357  07E7                     l534:	
+   358  07E7  3001               	movlw	1
+   359  07E8  07F0               	addwf	_tekrar,f
+   360  07E9  1803               	skipnc
+   361  07EA  0AF1               	incf	_tekrar+1,f
+   362  07EB  3000               	movlw	0
+   363  07EC  07F1               	addwf	_tekrar+1,f
+   364  07ED  2FA4               	goto	L1
+   365  07EE                     __end_of_main:	
+   366  007E                     btemp	set	126	;btemp
+   367  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        20
+    BSS         2
+    Persistent  2
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      2       6
+    BANK0            80      0      20
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 2     2      0       0
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BANK3               60      0       0       9        0.0%
+BITBANK3            60      0       0       8        0.0%
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               60      0       0      11        0.0%
+BITBANK2            60      0       0      10        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      0      14       5       25.0%
+BITBANK0            50      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      2       6       1       42.9%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      1A      12        0.0%
+ABS                  0      0      1A       3        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.45 build -152302408 
+Symbol Table                                                                                   Sun Mar 08 08:35:08 2020
+
+                      _i 0072                        pc 0002              __CFG_CP$OFF 0000  
+                     l23 07A2                       u55 07AD                       u65 07BA  
+                     u75 07E5                       u97 07D1                       fsr 0004  
+            __CFG_LVP$ON 0000                      l534 07E7                      l526 07BC  
+           __CFG_CPD$OFF 0000                      fsr0 0004                      indf 0000  
+           __CFG_FOSC$XT 0000             __CFG_WRT$OFF 0000                     _main 079E  
+                   btemp 007E            __CFG_BOREN$ON 0000                     start 0000  
+                  ?_main 0074            __CFG_WDTE$OFF 0000                    _PORTB 0006  
+                  _PORTC 0007                    _TRISB 0086                    _TRISC 0087  
+                  _satir 002A                    _sutun 0020                    pclath 000A  
+                  status 0003                    wtemp0 007E          __initialization 07EE  
+           __end_of_main 07EE                   ??_main 0074           __CFG_PWRTE$OFF 0000  
+                 _tekrar 0070  __end_of__initialization 07FC           __pcstackCOMMON 0074  
+           __pidataBANK0 078A               __pnvCOMMON 0070               __pmaintext 079E  
+   end_of_initialization 07FC      start_initialization 07EE               init_fetch0 0779  
+            __pdataBANK0 0020              __pbssCOMMON 0072                ___latbits 0002  
+          __size_of_main 0050                 init_ram0 077D  
